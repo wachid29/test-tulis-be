@@ -11,8 +11,8 @@ public class soal3 {
         mobil.add("Ford");
         mobil.add("Mazda");
 
-        Iterator iterator;
-        ListIterator listIterator = mobil.listIterator();
+        Iterator<String> iterator;
+        ListIterator<String> listIterator = mobil.listIterator();
 
         while (listIterator.hasNext()) {
             Object element = listIterator.next();
