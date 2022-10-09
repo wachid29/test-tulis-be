@@ -1,0 +1,43 @@
+Soal No 1
+ResponseEntity adalah seluruh response dari HTTP: kode status, header, dan isi. Kita dapat menggunakannya untuk mengonfigurasi response HTTP.
+Cara penggunaan nya dengan mengembalikan response dari endpoint yang sudah kita buat.
+contoh: 
+@GetMapping("/age")
+ResponseEntity<String> age(
+  @RequestParam("yearOfBirth") int yearOfBirth) {
+ 
+    if (isInFuture(yearOfBirth)) {
+        return new ResponseEntity<>(
+          "Year of birth cannot be in the future", 
+          HttpStatus.BAD_REQUEST);
+    }
+
+    return new ResponseEntity<>(
+      "Your age is " + calculateAge(yearOfBirth), 
+      HttpStatus.OK);
+}
+
+Soal No 2
+Array List:
+Berbeda dengan array biasa, ArrayList memiliki sejumlah operasi yang lebih lengkap dan mudah digunakan dibandingkan dengan array biasa. 
+ArrayList merupakan collection yang menjadi bagian dari Java Util. Seperti biasa, ArrayList dapat menambah data baru secara dinamis tanpa harus menentukan ukurannya di awal.
+Berbagai operasi dapat Anda lakukan terhadap ArrayList seperti berikut:
+
+size(), untuk mencari panjang ArrayList
+add(), untuk menambah elemen baru
+get(), untuk mengambil elemen pada indeks tertentu
+isEmpty(), untuk memeriksa apakah ArrayList kosong atau tidak
+indexOf(), untuk mengetahui indeks dari suatu nilai
+contains(), untuk memeriksa apakah suatu nilai ada dalam ArrayList
+set(), untuk menimpa nilai pada indeks tertentu
+remove(), untuk menghapus nilai pada indeks tertentu
+
+Iteration:
+Iterator adalah objek yang dapat digunakan untuk mengulang koleksi, seperti ArrayList dan HashSet . 
+Ini disebut "iterator" karena "iterasi" adalah istilah teknis untuk perulangan.
+
+Soal No 3
+JpaRepository adalah repository dari Java Peristence API yang dapat memudahkan kita sebagai developer membuat CRUD pada String Data.
+Dengan JpaRepository, kamu tidak perlu lagi membuat method insert() atau save() berkali kali pada repository. 
+Karena JpaRepository memiliki method bawaan yang bisa kita gunakan pada semua interface repository,
+untuk memakai repository JpaRepository kita Cuma wajib membuat objek dari repository tersebut diikuti oleh anotasi @Autowired di atasnya.
